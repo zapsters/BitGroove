@@ -21,7 +21,7 @@ export function Header() {
       </div> */}
       <div className="flex items-center gap-3">
         <button className="btn-pixel" onClick={() => { }} style={{ background: '#E87575', color: '#FFF2D5', padding: '8px 14px', display: 'flex', alignItems: 'center', gap: 6 }}>
-          <span style={{ fontSize: 14 }}>＋</span> ADD ALBUM
+          <span style={{ fontSize: 14, fontFamily: "Press Start 2P" }}>+</span>ADD ALBUM
         </button>
         <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'linear-gradient(135deg, #E87575, #F4A987)', border: '2px solid rgba(166,155,200,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Press Start 2P', fontSize: 9, color: '#FFF2D5', cursor: 'pointer' }}>A</div>
       </div>
