@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../styles/globals.scss";
+import { PixelVinyl } from "@/icons";
+import { Sidebar } from "@/components/sidebar";
+import { MobileNav } from "@/components/mobileNav";
+import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
   title: "vinext on Cloudflare Workers",
@@ -7,9 +11,32 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div style={{ display: 'flex', minHeight: '100vh', background: '#24243A' }}>
+          {/* Desktop Sidebar */}
+          <div className="hidden md:block" style={{ width: 220, flexShrink: 0 }}>
+            <Sidebar />
+          </div>
+
+          {/* Main */}
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+            <Header />
+            <main style={{ flex: 1, overflow: 'auto', paddingBottom: isMobile ? 70 : 0 }}>
+              {children}
+            </main>
+          </div>
+
+          {/* Mobile nav */}
+          <div className="md:hidden">
+            <MobileNav />
+          </div>
+        </div>
+      </body>
     </html>
   );
 }

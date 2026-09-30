@@ -1,0 +1,216 @@
+@use "fonts.scss";
+@use "tailwindcss";
+
+:root {
+  color-scheme: light;
+  background: #f8fafc;
+  color: #111827;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --color-navy: #24243a;
+  --color-purple: #39365b;
+  --color-lavender: #a69bc8;
+  --color-cream: #fff2d5;
+  --color-peach: #f4a987;
+  --color-coral: #e87575;
+  --color-mint: #91c9ad;
+  --color-gold: #f2c66d;
+  --font-pixel: "Press Start 2P", monospace;
+  --font-body: "Outfit", sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+/* BEGIN FIGMA MAKE */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: #24243a;
+  color: #fff2d5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pixel-art sharp shadows */
+.pixel-shadow {
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
+}
+
+.pixel-shadow-lg {
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.pixel-border {
+  border: 2px solid rgba(166, 155, 200, 0.3);
+}
+
+/* Hard pixel-art style buttons */
+.btn-pixel {
+  border: 2px solid transparent;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.05s,
+    box-shadow 0.05s;
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  image-rendering: pixelated;
+}
+
+.btn-pixel:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.btn-pixel:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+}
+
+/* Card style */
+.card-pixel {
+  border: 2px solid rgba(166, 155, 200, 0.25);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.35);
+}
+
+/* Scrollbar hide */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(166, 155, 200, 0.3);
+  border-radius: 0;
+}
+
+/* Pixel-art image rendering */
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Retro scan lines overlay effect */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px);
+  pointer-events: none;
+}
+
+/* Active nav item */
+.nav-active {
+  background: rgba(242, 198, 109, 0.15);
+  border-left: 3px solid #f2c66d;
+}
+
+/* Album card hover */
+.album-card:hover .album-overlay {
+  opacity: 1;
+}
+
+/* Pixel art decorative sparkle */
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Input style */
+.input-pixel {
+  background: rgba(36, 36, 58, 0.8);
+  border: 2px solid rgba(166, 155, 200, 0.3);
+  color: #fff2d5;
+  font-family: "Outfit", sans-serif;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input-pixel:focus {
+  border-color: #f2c66d;
+  box-shadow: 0 0 0 2px rgba(242, 198, 109, 0.15);
+}
+
+.input-pixel::placeholder {
+  color: rgba(166, 155, 200, 0.5);
+}
+
+/* Select style */
+select.input-pixel option {
+  background: #39365b;
+  color: #fff2d5;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  background: rgba(36, 36, 58, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+/* Range input */
+input[type="range"] {
+  height: 6px;
+  background: rgba(166, 155, 200, 0.2);
+  border: 1px solid rgba(166, 155, 200, 0.3);
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #f2c66d;
+  border: 2px solid #24243a;
+  cursor: pointer;
+}
