@@ -1,0 +1,7 @@
+.navButton {
+
+  &:hover,
+  &.nav-active {
+    background-color: rgba(166, 155, 200, 0.07) !important;
+  }
+}

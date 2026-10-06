@@ -44,7 +44,7 @@ export function Sidebar() {
             key={item.id}
             onClick={() =>
               router.push(item.id == "dashboard" ? "./" : item.id)}
-            className={pathname === item.id ? 'nav-active' : ''}
+            className={pathname === item.id ? 'navButton nav-active' : 'navButton'}
             style={{
               display: 'flex', alignItems: 'center', gap: 10,
               width: '100%', padding: '11px 20px',
@@ -54,8 +54,6 @@ export function Sidebar() {
               transition: 'background 0.15s',
               textAlign: 'left',
             }}
-            onMouseEnter={e => { if (pathname !== item.id) (e.currentTarget as HTMLElement).style.background = 'rgba(166,155,200,0.07)' }}
-            onMouseLeave={e => { if (pathname !== item.id) (e.currentTarget as HTMLElement).style.background = 'none' }}
           >
             <span style={{ fontSize: 16, color: pathname === item.id ? '#F2C66D' : '#A69BC8', width: 20, textAlign: 'center' }}>{item.icon}</span>
             <span style={{ fontFamily: 'Outfit', fontSize: 14, fontWeight: pathname === item.id ? 600 : 400, color: pathname === item.id ? '#FFF2D5' : '#A69BC8' }}>{item.label}</span>
@@ -69,7 +67,7 @@ export function Sidebar() {
           <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'linear-gradient(135deg, #E87575, #F4A987)', border: '2px solid rgba(166,155,200,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Press Start 2P', fontSize: 8, color: '#FFF2D5' }}>A</div>
           <div>
             <div style={{ fontSize: 13, fontWeight: 600, color: '#FFF2D5' }}>Apollo</div>
-            <div style={{ fontSize: 11, color: '#A69BC8' }}>## albums</div>
+            <div style={{ fontSize: 11, color: '#A69BC8' }}>## vinyls</div>
           </div>
         </div>
       </div>
