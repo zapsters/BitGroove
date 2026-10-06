@@ -62,7 +62,7 @@ export function Sidebar() {
       </nav>
 
       {/* Footer */}
-      <div style={{ padding: '16px 20px', borderTop: '2px solid rgba(166,155,200,0.1)' }}>
+      <a href="account" style={{ padding: '16px 20px', borderTop: '2px solid rgba(166,155,200,0.1)' }}>
         <div className="flex items-center gap-2">
           <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'linear-gradient(135deg, #E87575, #F4A987)', border: '2px solid rgba(166,155,200,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Press Start 2P', fontSize: 8, color: '#FFF2D5' }}>A</div>
           <div>
@@ -70,7 +70,7 @@ export function Sidebar() {
             <div style={{ fontSize: 11, color: '#A69BC8' }}>## vinyls</div>
           </div>
         </div>
-      </div>
+      </a>
     </aside>
   )
 }
