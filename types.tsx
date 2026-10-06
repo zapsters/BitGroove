@@ -1,5 +1,6 @@
 export type Format = 'vinyl' | 'cd' | 'cassette'
-export type Condition = 'Mint' | 'Near Mint' | 'Very Good+' | 'Very Good' | 'Good' | 'Fair'
+export type Condition = 'Mint' | 'Near Mint' | 'Very Good' | 'Good' | 'Fair' | 'Poor'
+export const CONDITIONS: Condition[] = ['Mint', 'Near Mint', 'Very Good', 'Good', 'Fair', 'Poor']
 export type Priority = 'low' | 'medium' | 'high'
 
 export interface AlbumFormData {

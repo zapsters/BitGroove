@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import StarRating from "./starRating";
-import { AlbumFormData, Condition, Format } from "@/types";
+import { AlbumFormData, Condition, CONDITIONS, Format } from "@/types";
 
 export const BLANK_FORM: AlbumFormData = { title: '', artist: '', year: new Date().getFullYear().toString(), genre: '', format: 'vinyl', condition: 'Very Good', rating: 3, purchasePrice: '', purchaseDate: new Date().toISOString().slice(0, 10), notes: '' }
 
@@ -30,7 +30,7 @@ export default function AlbumForm({ initial, onSave, onCancel, saveLabel = 'SAVE
       <div>
         <label style={labelStyle}>Condition</label>
         <select className="input-pixel" style={{ ...inputStyle }} value={form.condition} onChange={e => set('condition', e.target.value as Condition)}>
-          {(['Mint', 'Near Mint', 'Very Good+', 'Very Good', 'Good', 'Fair'] as Condition[]).map(c => <option key={c} value={c}>{c}</option>)}
+          {(CONDITIONS as Condition[]).map(c => <option key={c} value={c}>{c}</option>)}
         </select>
       </div>
       <div style={{ gridColumn: '1/-1' }}>

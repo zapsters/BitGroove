@@ -2,7 +2,7 @@
 
 import FormatBadge from "@/components/formatBadge";
 import { INITIAL_WISHLIST } from "@/defaultData";
-import { Condition, Format, Priority, WishlistItem } from "@/types";
+import { Condition, CONDITIONS, Format, Priority, WishlistItem } from "@/types";
 import { useState } from "react";
 
 const priorityColors: Record<Priority, string> = { low: '#91C9AD', medium: '#F2C66D', high: '#E87575' }
@@ -84,7 +84,7 @@ export default function Wishlist({ wishlist, onMoveToCollection, onAddWishlist }
                 <div>
                   <label style={{ fontSize: 11, color: '#A69BC8', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 4, display: 'block' }}>Condition</label>
                   <select className="input-pixel" style={inputStyle} value={moveForm.condition} onChange={e => setMoveForm(f => ({ ...f, condition: e.target.value as Condition }))}>
-                    {(['Mint', 'Near Mint', 'Very Good+', 'Very Good', 'Good', 'Fair'] as Condition[]).map(c => <option key={c} value={c}>{c}</option>)}
+                    {(CONDITIONS as Condition[]).map(c => <option key={c} value={c}>{c}</option>)}
                   </select>
                 </div>
                 <div>
